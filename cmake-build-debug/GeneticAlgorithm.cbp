@@ -92,6 +92,24 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/reneilpascua/CLionProjects/GeneticAlgorithm/City.cpp">
+			<Option target="GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/Users/reneilpascua/CLionProjects/GeneticAlgorithm/City.hpp">
+			<Option target="GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/Users/reneilpascua/CLionProjects/GeneticAlgorithm/Tour.cpp">
+			<Option target="GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/Users/reneilpascua/CLionProjects/GeneticAlgorithm/Tour.hpp">
+			<Option target="GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/Users/reneilpascua/CLionProjects/GeneticAlgorithm/TravellingSalesmanProblem.cpp">
+			<Option target="GeneticAlgorithm"/>
+		</Unit>
+		<Unit filename="/Users/reneilpascua/CLionProjects/GeneticAlgorithm/TravellingSalesmanProblem.hpp">
+			<Option target="GeneticAlgorithm"/>
+		</Unit>
 		<Unit filename="/Users/reneilpascua/CLionProjects/GeneticAlgorithm/main.cpp">
 			<Option target="GeneticAlgorithm"/>
 		</Unit>

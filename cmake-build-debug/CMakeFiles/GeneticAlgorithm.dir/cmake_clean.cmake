@@ -1,5 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/GeneticAlgorithm.dir/main.cpp.o"
+  "CMakeFiles/GeneticAlgorithm.dir/City.cpp.o"
+  "CMakeFiles/GeneticAlgorithm.dir/Tour.cpp.o"
+  "CMakeFiles/GeneticAlgorithm.dir/TravellingSalesmanProblem.cpp.o"
   "GeneticAlgorithm.pdb"
   "GeneticAlgorithm"
 )

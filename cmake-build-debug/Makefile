@@ -123,6 +123,87 @@ GeneticAlgorithm/fast:
 	$(MAKE) -f CMakeFiles/GeneticAlgorithm.dir/build.make CMakeFiles/GeneticAlgorithm.dir/build
 .PHONY : GeneticAlgorithm/fast
 
+City.o: City.cpp.o
+
+.PHONY : City.o
+
+# target to build an object file
+City.cpp.o:
+	$(MAKE) -f CMakeFiles/GeneticAlgorithm.dir/build.make CMakeFiles/GeneticAlgorithm.dir/City.cpp.o
+.PHONY : City.cpp.o
+
+City.i: City.cpp.i
+
+.PHONY : City.i
+
+# target to preprocess a source file
+City.cpp.i:
+	$(MAKE) -f CMakeFiles/GeneticAlgorithm.dir/build.make CMakeFiles/GeneticAlgorithm.dir/City.cpp.i
+.PHONY : City.cpp.i
+
+City.s: City.cpp.s
+
+.PHONY : City.s
+
+# target to generate assembly for a file
+City.cpp.s:
+	$(MAKE) -f CMakeFiles/GeneticAlgorithm.dir/build.make CMakeFiles/GeneticAlgorithm.dir/City.cpp.s
+.PHONY : City.cpp.s
+
+Tour.o: Tour.cpp.o
+
+.PHONY : Tour.o
+
+# target to build an object file
+Tour.cpp.o:
+	$(MAKE) -f CMakeFiles/GeneticAlgorithm.dir/build.make CMakeFiles/GeneticAlgorithm.dir/Tour.cpp.o
+.PHONY : Tour.cpp.o
+
+Tour.i: Tour.cpp.i
+
+.PHONY : Tour.i
+
+# target to preprocess a source file
+Tour.cpp.i:
+	$(MAKE) -f CMakeFiles/GeneticAlgorithm.dir/build.make CMakeFiles/GeneticAlgorithm.dir/Tour.cpp.i
+.PHONY : Tour.cpp.i
+
+Tour.s: Tour.cpp.s
+
+.PHONY : Tour.s
+
+# target to generate assembly for a file
+Tour.cpp.s:
+	$(MAKE) -f CMakeFiles/GeneticAlgorithm.dir/build.make CMakeFiles/GeneticAlgorithm.dir/Tour.cpp.s
+.PHONY : Tour.cpp.s
+
+TravellingSalesmanProblem.o: TravellingSalesmanProblem.cpp.o
+
+.PHONY : TravellingSalesmanProblem.o
+
+# target to build an object file
+TravellingSalesmanProblem.cpp.o:
+	$(MAKE) -f CMakeFiles/GeneticAlgorithm.dir/build.make CMakeFiles/GeneticAlgorithm.dir/TravellingSalesmanProblem.cpp.o
+.PHONY : TravellingSalesmanProblem.cpp.o
+
+TravellingSalesmanProblem.i: TravellingSalesmanProblem.cpp.i
+
+.PHONY : TravellingSalesmanProblem.i
+
+# target to preprocess a source file
+TravellingSalesmanProblem.cpp.i:
+	$(MAKE) -f CMakeFiles/GeneticAlgorithm.dir/build.make CMakeFiles/GeneticAlgorithm.dir/TravellingSalesmanProblem.cpp.i
+.PHONY : TravellingSalesmanProblem.cpp.i
+
+TravellingSalesmanProblem.s: TravellingSalesmanProblem.cpp.s
+
+.PHONY : TravellingSalesmanProblem.s
+
+# target to generate assembly for a file
+TravellingSalesmanProblem.cpp.s:
+	$(MAKE) -f CMakeFiles/GeneticAlgorithm.dir/build.make CMakeFiles/GeneticAlgorithm.dir/TravellingSalesmanProblem.cpp.s
+.PHONY : TravellingSalesmanProblem.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +240,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... GeneticAlgorithm"
+	@echo "... City.o"
+	@echo "... City.i"
+	@echo "... City.s"
+	@echo "... Tour.o"
+	@echo "... Tour.i"
+	@echo "... Tour.s"
+	@echo "... TravellingSalesmanProblem.o"
+	@echo "... TravellingSalesmanProblem.i"
+	@echo "... TravellingSalesmanProblem.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
