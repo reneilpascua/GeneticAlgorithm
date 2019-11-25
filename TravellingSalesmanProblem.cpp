@@ -11,6 +11,7 @@ TravellingSalesmanProblem::TravellingSalesmanProblem(int populationSize, int cit
           MAP_BOUNDARY(mapBoundary), PARENT_POOL_SIZE(parentPoolSize), MUTATION_RATE(mutationRate),
           NUMBER_OF_PARENTS(numberOfParents), IMPROVEMENT_THRESHOLD(improvementThreshold) {
 
+
     nTours=0;
     thresholdreached = false;
     generateRandomCities();
@@ -23,20 +24,23 @@ void TravellingSalesmanProblem::solve() {
 
 // setup
     base_fitness = findElite();
+    Tour basetour = *(tours.end()-1);
     base_average_fitness = getAverageFitness();
     double highestFitness = base_fitness;
+    double prevHighest=0;
+    double prevAverage=0;
     cout << "base fitness: "<<base_fitness<<endl<<endl;
 
 // begin to iterate generation to generation
     int numIterations=0;
     while (numIterations<ITERATIONS) {
-        double prevHighest = highestFitness;
+        prevHighest = highestFitness;
         if (highestFitness/base_fitness > IMPROVEMENT_THRESHOLD) {
             thresholdreached=true;
             break;
         }
 
-        double prevAverage = getAverageFitness();
+        prevAverage = getAverageFitness();
         cout << "===== begin iteration "<<numIterations<<" with previous highest fitness = "<<prevHighest << endl;
         // crossover -- mix routes and overwrite the first POPULATION_SIZE-1 tours
 //        cout << "crossover..." << endl;
@@ -59,14 +63,25 @@ void TravellingSalesmanProblem::solve() {
 //        if (numIterations%5==0)printTours();
     }
 
-    if (thresholdreached) {
-        cout<<"\n-- improvement threshold reached at iteration "<<numIterations << " --"<<endl;
-    } else {
-        cout<<"\n-- improvement threshold NOT reached by iteration "<<numIterations << " --"<<endl;
-    }
+
     // final print of the tours
-    cout<<"\n\nFINAL TOURS: "<<endl;
+    cout<<"\n\nFINAL REPORT:\n\n"<<endl;
     printTours();
+    cout<<endl;
+    report(highestFitness,prevHighest,prevAverage);
+
+    cout<<"elite tour:"<<endl;
+    cout<< *(tours.end()-1) <<endl;
+    cout << "base tour:"<<endl;
+    cout<<basetour<<endl;
+
+    double impThr = convertToPercent(IMPROVEMENT_THRESHOLD);
+    if (thresholdreached) {
+        cout<<"\n-- improvement threshold of "<<impThr<<"% reached at iteration "<<numIterations << " --"<<endl;
+    } else {
+        cout<<"\n-- improvement threshold of "<<impThr<<"% NOT reached by iteration "<<numIterations << " --"<<endl;
+    }
+
 }
 
 void TravellingSalesmanProblem::generateRandomCities() {
