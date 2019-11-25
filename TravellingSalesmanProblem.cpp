@@ -288,11 +288,11 @@ void TravellingSalesmanProblem::printCities() {
 void TravellingSalesmanProblem::report(double highestFitness, double prevHighest,double prevAvg) {
     double avg = getAverageFitness();
     cout << fixed << setprecision(7) <<"new highest fitness:\t"<< highestFitness <<endl;
-    cout << fixed << setprecision(7) << "new average fitness:\t" << avg << endl;
+    cout << "new average fitness:\t" << avg << endl;
     cout << fixed << setprecision(3) << "improvement of highest / previous:\t" << convertToPercent(highestFitness/prevHighest) <<"%"<< endl;
-    cout << fixed << setprecision(3) << "improvement of highest / base:\t\t" << convertToPercent(highestFitness/base_fitness) <<"%"<< endl;
-    cout << fixed << setprecision(3) << "improvement of average / previous:\t" << convertToPercent(avg/prevAvg) <<"%"<< endl;
-    cout << fixed << setprecision(3) << "improvement of average / base:\t\t" << convertToPercent(avg/base_average_fitness) <<"%"<< endl << endl;
+    cout << "improvement of highest / base:\t\t" << convertToPercent(highestFitness/base_fitness) <<"%"<< endl;
+    cout << "improvement of average / previous:\t" << convertToPercent(avg/prevAvg) <<"%"<< endl;
+    cout << "improvement of average / base:\t\t" << convertToPercent(avg/base_average_fitness) <<"%"<< endl << endl;
 }
 
 void TravellingSalesmanProblem::printTours() {
