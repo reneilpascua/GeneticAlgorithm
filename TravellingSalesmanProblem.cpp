@@ -34,14 +34,13 @@ void TravellingSalesmanProblem::solve() {
 // begin to iterate generation to generation
     int numIterations=0;
     while (numIterations<ITERATIONS) {
-        prevHighest = highestFitness;
         if (highestFitness/base_fitness > IMPROVEMENT_THRESHOLD) {
             thresholdreached=true;
             break;
         }
-
+        prevHighest = highestFitness;
         prevAverage = getAverageFitness();
-        cout << "===== begin iteration "<<numIterations<<" with previous highest fitness = "<<prevHighest << endl;
+        cout << "===== begin iteration "<<numIterations<<" with previous highest fitness = "<<fixed<<setprecision(7)<<prevHighest << endl;
         // crossover -- mix routes and overwrite the first POPULATION_SIZE-1 tours
 //        cout << "crossover..." << endl;
         crossoverPhase();
@@ -70,7 +69,7 @@ void TravellingSalesmanProblem::solve() {
     cout<<endl;
     report(highestFitness,prevHighest,prevAverage);
 
-    cout<<"elite tour:"<<endl;
+    cout<<"elite tour:"<<fixed<<setprecision(7)<<endl;
     cout<< *(tours.end()-1) <<endl;
     cout << "base tour:"<<endl;
     cout<<basetour<<endl;
@@ -288,16 +287,16 @@ void TravellingSalesmanProblem::printCities() {
 
 void TravellingSalesmanProblem::report(double highestFitness, double prevHighest,double prevAvg) {
     double avg = getAverageFitness();
-    cout << fixed << setprecision(6)<<"highest fitness:\t"<< highestFitness <<endl;
-    cout << fixed << setprecision(6)<< "average fitness:\t" << avg << endl;
-    cout << fixed << setprecision(2)<< "improvement of highest / previous:\t" << convertToPercent(highestFitness/prevHighest) <<"%"<< endl;
-    cout << fixed << setprecision(2)<< "improvement of highest / base:\t\t" << convertToPercent(highestFitness/base_fitness) <<"%"<< endl;
-    cout << fixed << setprecision(2)<< "improvement of average / previous:\t" << convertToPercent(avg/prevAvg) <<"%"<< endl;
-    cout << fixed << setprecision(2)<< "improvement of average / base:\t\t" << convertToPercent(avg/base_average_fitness) <<"%"<< endl << endl;
+    cout << fixed << setprecision(7) <<"new highest fitness:\t"<< highestFitness <<endl;
+    cout << fixed << setprecision(7) << "new average fitness:\t" << avg << endl;
+    cout << fixed << setprecision(3) << "improvement of highest / previous:\t" << convertToPercent(highestFitness/prevHighest) <<"%"<< endl;
+    cout << fixed << setprecision(3) << "improvement of highest / base:\t\t" << convertToPercent(highestFitness/base_fitness) <<"%"<< endl;
+    cout << fixed << setprecision(3) << "improvement of average / previous:\t" << convertToPercent(avg/prevAvg) <<"%"<< endl;
+    cout << fixed << setprecision(3) << "improvement of average / base:\t\t" << convertToPercent(avg/base_average_fitness) <<"%"<< endl << endl;
 }
 
 void TravellingSalesmanProblem::printTours() {
-    cout << fixed << setprecision(6)<< "tours: "<<endl;
+    cout << fixed << setprecision(7) << "tours: "<<endl;
     for (Tour tour:tours) {
         cout << tour<<endl;
     }
