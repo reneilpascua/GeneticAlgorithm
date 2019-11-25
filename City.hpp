@@ -5,6 +5,7 @@
 #ifndef GENETICALGORITHM_CITY_HPP
 #define GENETICALGORITHM_CITY_HPP
 
+#include <iostream>
 #include <string>
 
 using namespace std;
@@ -17,7 +18,11 @@ public:
     int y;
 
     City(string,int,int);
-    ~City();
+//    ~City();
+
+    friend ostream &operator<<( ostream &output, const City& city );
+
+    bool operator==(const City& rhs) const;
 };
 
 
