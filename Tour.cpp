@@ -22,7 +22,7 @@ double Tour::getTourDistance() const {
 }
 
 ostream &operator<<(ostream &output, const Tour &tour) {
-    output<<"tour #"<<tour.id<<" ";
+    output<<"tour #"<<tour.id<<" - ";
     for (City city:tour.visits) {
         output << city.name <<"|";
     }

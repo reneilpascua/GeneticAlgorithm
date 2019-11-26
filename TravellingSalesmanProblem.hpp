@@ -57,6 +57,11 @@ public:
                               int parentPoolSize, double mutationRate, int numberOfParents,
                               double improvementThreshold);
 
+    //overloaded constructor which allows user to enter their own vector of cities
+    TravellingSalesmanProblem(int populationSize, int shuffle, int iterations,
+                              int parentPoolSize, double mutationRate, int numberOfParents,
+                              double improvementThreshold, vector<City> userCities);
+
     //solve the travelling salesman problem using a genetic algorithm
     void solve();
 

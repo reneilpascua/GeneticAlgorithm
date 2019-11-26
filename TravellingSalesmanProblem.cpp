@@ -19,6 +19,26 @@ TravellingSalesmanProblem::TravellingSalesmanProblem(int populationSize, int cit
     populateFitnesses();
 }
 
+TravellingSalesmanProblem::TravellingSalesmanProblem(int populationSize, int shuffle, int iterations,
+                                                     int parentPoolSize, double mutationRate,
+                                                     int numberOfParents, double improvementThreshold, vector<City> userCities)
+        : POPULATION_SIZE(populationSize), SHUFFLE(shuffle), ITERATIONS(iterations),
+          PARENT_POOL_SIZE(parentPoolSize), MUTATION_RATE(mutationRate),
+          NUMBER_OF_PARENTS(numberOfParents), IMPROVEMENT_THRESHOLD(improvementThreshold) {
+
+
+    nTours=0;
+    thresholdreached = false;
+
+    cities = userCities;
+    CITIES_IN_TOUR=userCities.size();
+    MAP_BOUNDARY=0; // don't care about map boundary if user-defined cities/locations
+
+    generateRandomTours();
+    populateFitnesses();
+}
+
+
 void TravellingSalesmanProblem::solve() {
     cout << "\n===== solving... =============================" << endl;
 
@@ -74,6 +94,7 @@ void TravellingSalesmanProblem::solve() {
     cout << "base tour:"<<endl;
     cout<<basetour<<endl;
 
+    cout<<fixed<<setprecision(3);
     double impThr = convertToPercent(IMPROVEMENT_THRESHOLD);
     if (thresholdreached) {
         cout<<"\n-- improvement threshold of "<<impThr<<"% reached at iteration "<<numIterations << " --"<<endl;
@@ -315,6 +336,8 @@ double TravellingSalesmanProblem::getAverageFitness() {
 double TravellingSalesmanProblem::convertToPercent(double improvementfactor) {
     return (improvementfactor-1.0)*100;
 }
+
+
 
 
 
