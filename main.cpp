@@ -12,39 +12,45 @@ int main() {
     const int PARENT_POOL_SIZE = 5;
     const double MUTATION_RATE = 0.20;
     const int NUMBER_OF_PARENTS = 2;
-    const double IMPROVEMENT_THRESHOLD = 1.25; // 20% improvement
+    const double IMPROVEMENT_THRESHOLD = 1.25; // 25% improvement
 
-    cout<<"tsp of random cities and random tours: -------------"<<endl;
-    TravellingSalesmanProblem myproblem1(POPULATION_SIZE,CITIES_IN_TOUR,SHUFFLE,ITERATIONS,MAP_BOUNDARY,
-            PARENT_POOL_SIZE,MUTATION_RATE,NUMBER_OF_PARENTS,IMPROVEMENT_THRESHOLD);
-    myproblem1.printTours();
-    myproblem1.solve();
+    // which runs to do?
+    bool useRandomizedCities = true;
+    bool useGreaterVancouver = false;
+
+    if (useRandomizedCities) {
 
 
-    bool TEST_USER_DEFINED_CITIES = false;
-    if (!TEST_USER_DEFINED_CITIES) {
-        return 0;
+        cout<<"tsp of random cities and random tours: -------------"<<endl;
+        TravellingSalesmanProblem myproblem1(POPULATION_SIZE,CITIES_IN_TOUR,SHUFFLE,ITERATIONS,MAP_BOUNDARY,
+                                             PARENT_POOL_SIZE,MUTATION_RATE,NUMBER_OF_PARENTS,IMPROVEMENT_THRESHOLD);
+        myproblem1.printTours();
+        myproblem1.solve();
     }
-    cout <<"tsp of user-defined cities and random tours: -------------"<<endl;
-    vector<City> userCities;
-    userCities.push_back(City("vancouver",0.0,0.0));
-    userCities.push_back(City("burnaby",25.0,0.0));
-    userCities.push_back(City("new westminster",50.0,-10.0));
-    userCities.push_back(City("west vancouver",0.0,30.0));
-    userCities.push_back(City("north vancouver",25.0,25.0));
-    userCities.push_back(City("richmond",10.0,-20.0));
-    userCities.push_back(City("delta",15.0,-30.0));
-    userCities.push_back(City("surrey",70.0,-30.0));
-    userCities.push_back(City("tsawassen",25.0,-50.0));
-    userCities.push_back(City("maple ridge",100.0,10.0));
-    userCities.push_back(City("coquitlam",80.0,40.0));
-    userCities.push_back(City("port coquitlam",80.0,25.0));
 
-    TravellingSalesmanProblem myproblem2(POPULATION_SIZE,SHUFFLE,ITERATIONS,
-                                         PARENT_POOL_SIZE,MUTATION_RATE,NUMBER_OF_PARENTS,2.0,
-                                         userCities);
-    myproblem2.printTours();
-    myproblem2.solve();
+    if (useGreaterVancouver) {
+        cout <<"tsp of user-defined cities and random tours: -------------"<<endl;
+        vector<City> userCities;
+        userCities.push_back(City("vancouver",0.0,0.0));
+        userCities.push_back(City("burnaby",25.0,0.0));
+        userCities.push_back(City("new westminster",50.0,-10.0));
+        userCities.push_back(City("west vancouver",0.0,30.0));
+        userCities.push_back(City("north vancouver",25.0,25.0));
+        userCities.push_back(City("richmond",10.0,-20.0));
+        userCities.push_back(City("delta",15.0,-30.0));
+        userCities.push_back(City("surrey",70.0,-30.0));
+        userCities.push_back(City("tsawassen",25.0,-50.0));
+        userCities.push_back(City("maple ridge",100.0,10.0));
+        userCities.push_back(City("coquitlam",80.0,40.0));
+        userCities.push_back(City("port coquitlam",80.0,25.0));
+
+        TravellingSalesmanProblem myproblem2(POPULATION_SIZE,SHUFFLE,ITERATIONS,
+                                             PARENT_POOL_SIZE,MUTATION_RATE,NUMBER_OF_PARENTS,2.0,
+                                             userCities);
+        myproblem2.printTours();
+        myproblem2.solve();
+    }
+
 
     return 0;
 }

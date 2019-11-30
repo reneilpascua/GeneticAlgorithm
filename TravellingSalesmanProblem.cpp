@@ -97,9 +97,9 @@ void TravellingSalesmanProblem::solve() {
     cout<<fixed<<setprecision(3);
     double impThr = convertToPercent(IMPROVEMENT_THRESHOLD);
     if (thresholdreached) {
-        cout<<"\n-- improvement threshold of "<<impThr<<"% reached at iteration "<<numIterations << " --"<<endl;
+        cout<<"\n-- improvement threshold of "<<impThr<<"% reached at iteration "<<--numIterations << " --"<<endl;
     } else {
-        cout<<"\n-- improvement threshold of "<<impThr<<"% NOT reached by iteration "<<numIterations << " --"<<endl;
+        cout<<"\n-- improvement threshold of "<<impThr<<"% NOT reached by iteration "<<--numIterations << " --"<<endl;
     }
 
 }
