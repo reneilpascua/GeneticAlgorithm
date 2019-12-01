@@ -1,8 +1,11 @@
 #include <iostream>
 #include "TravellingSalesmanProblem.hpp"
 
+#include <chrono>
+
 int main() {
 
+    auto start = chrono::high_resolution_clock::now();
     // define this run's TSP
     const int POPULATION_SIZE = 32;
     const int CITIES_IN_TOUR = 32;
@@ -51,6 +54,8 @@ int main() {
         myproblem2.solve();
     }
 
-
+    auto stop = chrono::high_resolution_clock::now();
+    auto duration = chrono::duration_cast<chrono::microseconds>(stop-start);
+    cout << "this run took " << duration.count() << " microseconds"<<endl;
     return 0;
 }
